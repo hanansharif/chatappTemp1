@@ -1,20 +1,19 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import Constants from 'expo-constants';
-
+import Constants from "expo-constants";
+// Firebase config
 const firebaseConfig = {
-    apiKey: Constants.manifest2.extra.apiKey,
-    authDomain: Constants.manifest2.extra.authDomain,
-    projectId: Constants.manifest2.extra.projectId,
-    storageBucket: Constants.manifest2.extra.storageBucket,
-    messagingSenderId: Constants.manifest2.extra.messagingSenderId,
-    appId: Constants.manifest2.extra.appId,
-    databaseURL: Constants.manifest2.extra.databaseURL
+    apiKey: Constants.expoConfig.extra.apiKey,
+    authDomain: Constants.expoConfig.extra.authDomain,
+    projectId: Constants.expoConfig.extra.projectId,
+    storageBucket: Constants.expoConfig.extra.storageBucket,
+    messagingSenderId: Constants.expoConfig.extra.messagingSenderId,
+    appId: Constants.expoConfig.extra.appId,
+    databaseURL: Constants.expoConfig.extra.databaseURL,
+    //   @deprecated is deprecated Constants.manifest
 };
-
-// Initialize Firebase
+// initialize firebase
 initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const database = getFirestore();
