@@ -14,6 +14,6 @@ const firebaseConfig = {
     //   @deprecated is deprecated Constants.manifest
 };
 // initialize firebase
-initializeApp(firebaseConfig);
-export const auth = getAuth();
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
 export const database = getFirestore();
